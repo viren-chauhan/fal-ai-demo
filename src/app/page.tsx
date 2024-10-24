@@ -1,4 +1,6 @@
+"use client";
 import Button from "@/components/Button";
+import TextInput from "@/components/TextInput";
 import Image from "next/image";
 
 const arr = [1, 2, 3, 4, 5, 6];
@@ -34,30 +36,48 @@ export default function Home() {
                 <label htmlFor="imgSize" className="text-white">
                   Image Size
                 </label>
-                <input
-                  type="text"
-                  id="imgSize"
-                  className="rounded-md border bg-transparent text-white px-2 focus:outline-none"
+                <TextInput
+                  type={"text"}
+                  id={"imgSize"}
+                  style={
+                    "rounded-md border bg-transparent text-white px-2 focus:outline-none"
+                  }
+                  placeholder={""}
+                // onChange={(e: any) => {
+                // }}
+                // err="dkf"
                 />
               </div>
               <div className="flex-row flex justify-between">
                 <label htmlFor="scale" className="text-white">
                   Scale
                 </label>
-                <input
-                  type="text"
-                  id="scale"
-                  className="rounded-md border bg-transparent text-white px-2 focus:outline-none"
+                <TextInput
+                  type={"text"}
+                  id={"scale"}
+                  style={
+                    "rounded-md border bg-transparent text-white px-2 focus:outline-none"
+                  }
+                // placeholder={""}
+                // onChange={(e: any) => {
+                // }}
+                // err="dkf"
                 />
               </div>
               <div className="flex-row flex justify-between">
                 <label htmlFor="steps" className="text-white">
                   Steps
                 </label>
-                <input
-                  type="text"
-                  id="steps"
-                  className="rounded-md border bg-transparent text-white px-2 focus:outline-none"
+                <TextInput
+                  type={"text"}
+                  id={"steps"}
+                  style={
+                    "rounded-md border bg-transparent text-white px-2 focus:outline-none"
+                  }
+                // placeholder={""}
+                // onChange={(e: any) => {
+                // }}
+                // err="dkf"
                 />
               </div>
 
