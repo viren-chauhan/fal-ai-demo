@@ -7,7 +7,7 @@ import React from "react";
 const arr = [1, 2, 3, 4, 5, 6];
 
 export default function Home() {
-  const [scale, setScale] = React.useState("2");
+  const [scale, setScale] = React.useState<number>(2);
   return (
     <div className="min-h-screen bg-[#111419] flex flex-col gap-5 p-4">
       <h1 className="text-white text-2xl font-semibold">General Image</h1>
@@ -29,11 +29,18 @@ export default function Home() {
                   No of images
                 </label>
                 <input
-                  type="number"
-                  id="imgSize"
-                  min={0}
-                  className="rounded-md border bg-transparent text-white px-2 focus:outline-none"
+                  type="range"
+                  min={0.0}
+                  max={4.0}
+                  value={scale}
+                  id="scale"
+                  step={0.1}
+                  className="w-11/12"
+                  onChange={(e: any) => setScale(e.target.value)}
                 />
+                <span style={{ borderRadius: 8, height: 25, width: 60, backgroundColor: 'white' }}>
+                  <input onChange={(e: any) => e?.target?.value < 5 && setScale(e?.target?.value || 0)} className="w-full bg-transparent focus:outline-none text-black text-center" value={scale} type="number" max={4} min={0} />
+                </span>
               </div>
               <div className="flex-row flex justify-between">
                 <label htmlFor="imgSize" className="text-white">
@@ -48,7 +55,7 @@ export default function Home() {
                   <option value="square" className="text-black">
                     Square
                   </option>
-                  <option value="squarehd" className="text-black">
+                  <option value="square_hd" className="text-black">
                     Square HD
                   </option>
                   <option value="portrait_3_4" className="text-black">
@@ -83,13 +90,17 @@ export default function Home() {
                 <div className="w-8/12 flex justify-center gap-2">
                   <input
                     type="range"
-                    min="0"
-                    max="4"
+                    min={0.0}
+                    max={4.0}
+                    value={scale}
                     id="scale"
+                    step={0.1}
                     className="w-11/12"
-                    onChange={(e) => setScale(e.target.value)}
+                    onChange={(e: any) => setScale(e.target.value)}
                   />
-                  <span>{scale}</span>
+                  <span style={{ borderRadius: 8, height: 25, width: 60, backgroundColor: 'white' }}>
+                    <input onChange={(e: any) => e?.target?.value < 5 && setScale(e?.target?.value || 0)} className="w-full bg-transparent focus:outline-none text-black text-center" value={scale} type="number" max={4} min={0} />
+                  </span>
                   {/* <TextInput
                   type={"text"}
                   id={"scale"}
@@ -114,10 +125,10 @@ export default function Home() {
                   style={
                     "rounded-md border bg-transparent text-white px-2 focus:outline-none"
                   }
-                  // placeholder={""}
-                  // onChange={(e: any) => {
-                  // }}
-                  // err="dkf"
+                // placeholder={""}
+                // onChange={(e: any) => {
+                // }}
+                // err="dkf"
                 />
               </div>
             </div>
