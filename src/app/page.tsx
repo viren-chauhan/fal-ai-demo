@@ -1,3 +1,4 @@
+import Button from "@/components/Button";
 import Image from "next/image";
 
 const arr = [1, 2, 3, 4, 5, 6];
@@ -80,9 +81,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <button className="mt-3 p-2 bg-[#b747d0] text-white font-semibold rounded-md cursor-pointer">
-            Generate Image
-          </button>
+          <Button label="Generate Image" />
         </div>
       </div>
       <div className="flex-grow bg-[#2c2d44] rounded-md p-3">
@@ -101,12 +100,8 @@ export default function Home() {
           ))}
         </div>
         <div className="gap-3 flex">
-          <button className="mt-3 p-2 bg-[#b747d0] text-white font-semibold rounded-md min-w-40 cursor-pointer">
-            Save
-          </button>
-          <button className="mt-3 p-2 bg-[#b747d0] text-white font-semibold rounded-md max-w-40 cursor-pointer">
-            Generate Video
-          </button>
+          <Button label="Save" />
+          <Button label="Generate Video" />
         </div>
       </div>
     </div>
