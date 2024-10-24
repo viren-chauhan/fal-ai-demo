@@ -36,7 +36,31 @@ export default function Home() {
                 <label htmlFor="imgSize" className="text-white">
                   Image Size
                 </label>
-                <TextInput
+                <select
+                  name="imgSize"
+                  id="imgSize"
+                  className="rounded-md border bg-transparent text-white w-8/12 focus:outline-none"
+                >
+                  <option value="square" className="text-black">
+                    Square
+                  </option>
+                  <option value="squarehd" className="text-black">
+                    Square HD
+                  </option>
+                  <option value="portrait_3_4" className="text-black">
+                    Portrait 3:4
+                  </option>
+                  <option value="portrait_9_16" className="text-black">
+                    Portrait 9:16
+                  </option>
+                  <option value="landscape_4_3" className="text-black">
+                    Landscape 4:3
+                  </option>
+                  <option value="landscape_16_9" className="text-black">
+                    Landscape 16:9
+                  </option>
+                </select>
+                {/* <TextInput
                   type={"text"}
                   id={"imgSize"}
                   style={
@@ -46,23 +70,31 @@ export default function Home() {
                 // onChange={(e: any) => {
                 // }}
                 // err="dkf"
-                />
+                /> */}
               </div>
               <div className="flex-row flex justify-between">
                 <label htmlFor="scale" className="text-white">
                   Scale
                 </label>
-                <TextInput
+                <input
+                  type="range"
+                  min="0"
+                  max="4"
+                  id="scale"
+                  className="w-8/12"
+                  onChange={(e) => console.log(e.target.value)}
+                />
+                {/* <TextInput
                   type={"text"}
                   id={"scale"}
                   style={
                     "rounded-md border bg-transparent text-white px-2 focus:outline-none"
                   }
-                // placeholder={""}
-                // onChange={(e: any) => {
-                // }}
-                // err="dkf"
-                />
+                  // placeholder={""}
+                  // onChange={(e: any) => {
+                  // }}
+                  // err="dkf"
+                /> */}
               </div>
               <div className="flex-row flex justify-between">
                 <label htmlFor="steps" className="text-white">
@@ -74,13 +106,12 @@ export default function Home() {
                   style={
                     "rounded-md border bg-transparent text-white px-2 focus:outline-none"
                   }
-                // placeholder={""}
-                // onChange={(e: any) => {
-                // }}
-                // err="dkf"
+                  // placeholder={""}
+                  // onChange={(e: any) => {
+                  // }}
+                  // err="dkf"
                 />
               </div>
-
             </div>
           </div>
 
