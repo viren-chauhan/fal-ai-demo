@@ -22,6 +22,16 @@ export default function Home() {
             <div className="w-1/4 h-40 rounded-md border bg-[#2e334d] p-5 flex flex-col justify-between">
               <div className="flex-row flex justify-between">
                 <label htmlFor="imgSize" className="text-white">
+                  No of images
+                </label>
+                <input
+                  type="text"
+                  id="imgSize"
+                  className="rounded-md border bg-transparent text-white px-2 focus:outline-none"
+                />
+              </div>
+              <div className="flex-row flex justify-between">
+                <label htmlFor="imgSize" className="text-white">
                   Image Size
                 </label>
                 <input
@@ -50,6 +60,7 @@ export default function Home() {
                   className="rounded-md border bg-transparent text-white px-2 focus:outline-none"
                 />
               </div>
+
             </div>
           </div>
 
