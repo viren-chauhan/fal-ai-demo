@@ -2,10 +2,12 @@
 import Button from "@/components/Button";
 import TextInput from "@/components/TextInput";
 import Image from "next/image";
+import React from "react";
 
 const arr = [1, 2, 3, 4, 5, 6];
 
 export default function Home() {
+  const [scale, setScale] = React.useState("2");
   return (
     <div className="min-h-screen bg-[#111419] flex flex-col gap-5 p-4">
       <h1 className="text-white text-2xl font-semibold">General Image</h1>
@@ -27,8 +29,9 @@ export default function Home() {
                   No of images
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   id="imgSize"
+                  min={0}
                   className="rounded-md border bg-transparent text-white px-2 focus:outline-none"
                 />
               </div>
@@ -39,6 +42,7 @@ export default function Home() {
                 <select
                   name="imgSize"
                   id="imgSize"
+                  onChange={(e) => console.log(e.target.value)}
                   className="rounded-md border bg-transparent text-white w-8/12 focus:outline-none"
                 >
                   <option value="square" className="text-black">
@@ -76,33 +80,37 @@ export default function Home() {
                 <label htmlFor="scale" className="text-white">
                   Scale
                 </label>
-                <input
-                  type="range"
-                  min="0"
-                  max="4"
-                  id="scale"
-                  className="w-8/12"
-                  onChange={(e) => console.log(e.target.value)}
-                />
-                {/* <TextInput
+                <div className="w-8/12 flex justify-center gap-2">
+                  <input
+                    type="range"
+                    min="0"
+                    max="4"
+                    id="scale"
+                    className="w-11/12"
+                    onChange={(e) => setScale(e.target.value)}
+                  />
+                  <span>{scale}</span>
+                  {/* <TextInput
                   type={"text"}
                   id={"scale"}
                   style={
                     "rounded-md border bg-transparent text-white px-2 focus:outline-none"
-                  }
-                  // placeholder={""}
-                  // onChange={(e: any) => {
-                  // }}
-                  // err="dkf"
-                /> */}
+                    }
+                    // placeholder={""}
+                    // onChange={(e: any) => {
+                      // }}
+                      // err="dkf"
+                      /> */}
+                </div>
               </div>
               <div className="flex-row flex justify-between">
                 <label htmlFor="steps" className="text-white">
                   Steps
                 </label>
                 <TextInput
-                  type={"text"}
+                  type={"number"}
                   id={"steps"}
+                  min={0}
                   style={
                     "rounded-md border bg-transparent text-white px-2 focus:outline-none"
                   }
